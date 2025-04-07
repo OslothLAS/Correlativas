@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Setter;
@@ -12,8 +11,13 @@ import lombok.Getter;
 public class Materia
 {
     private String nombre;
-    public ArrayList<Materia> correlativas;
+    private List<Materia> correlativas;
 
-    public Materia(String nombre, ArrayList<Materia> correlativa){};
+    public Materia(String nombre, List<Materia> correlativa){};
+
+    public void tieneCorrelativa(Materia materia){
+        this.correlativas.contains(materia);
+    }
+
 
 }
