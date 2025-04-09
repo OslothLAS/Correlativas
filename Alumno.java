@@ -1,30 +1,42 @@
 package org.example;
 
+import org.example.Materia;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Setter;
-import lombok.Getter;
 
-@Getter
-@Setter
 public class Alumno {
+
 
     private String nombre;
     private List<Materia> aprobadas;
-    private List<Materia> inscripciones;
 
-
-    public void agregarMateriaAprobada(List<Materia> materias){
-        this.aprobadas.addAll(materias);
+    public boolean puedeInscribirse(Materia materia) {
+        return this.aprobadas.containsAll(materia.getCorrelativas());
     }
 
-    public void inscribirseAUnaMateria(Materia materia){
-        this.inscripciones.add(materia);
+    public Alumno(String nombre, List<Materia> aprobadas){}
+
+
+
+
+    //SETTERS Y GETTERS
+    public List<Materia> getAprobadas() {
+        return aprobadas;
     }
 
-    public void insribirseAMasDeUnaMateria( List<Materia> materias){
-        this.inscripciones.addAll(materias);
+    public void setAprobadas(List<Materia> aprobadas) {
+        this.aprobadas = aprobadas;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
 
 
 }
