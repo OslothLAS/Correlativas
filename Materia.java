@@ -28,7 +28,7 @@ public class Materia
 
     public Materia(String nombre, List<Materia> correlativa){};
 
-    public boolean tieneCorrelativa(Materia materia){
+    public Boolean tieneCorrelativa(Materia materia){
        return this.correlativas.contains(materia);
     }
 
