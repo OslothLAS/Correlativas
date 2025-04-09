@@ -2,21 +2,34 @@ package org.example;
 
 import java.util.List;
 
-import lombok.Setter;
-import lombok.Getter;
-
-@Getter
-@Setter
 
 public class Materia
 {
     private String nombre;
     private List<Materia> correlativas;
 
+    public List<Materia> getCorrelativas() {
+        return correlativas;
+    }
+
+    public void setCorrelativas(List<Materia> correlativas) {
+        this.correlativas = correlativas;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
     public Materia(String nombre, List<Materia> correlativa){};
 
-    public void tieneCorrelativa(Materia materia){
-        this.correlativas.contains(materia);
+    public boolean tieneCorrelativa(Materia materia){
+       return this.correlativas.contains(materia);
     }
 
 
