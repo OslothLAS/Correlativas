@@ -10,7 +10,7 @@ public class Alumno {
     private String nombre;
     private List<Materia> aprobadas;
 
-    public boolean puedeInscribirse(Materia materia) {
+    public Boolean puedeInscribirse(Materia materia) {
         return this.aprobadas.containsAll(materia.getCorrelativas());
     }
 
