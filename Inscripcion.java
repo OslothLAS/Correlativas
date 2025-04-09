@@ -1,14 +1,11 @@
 package org.example;
-
+import java.util.Arrays;
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter
-@Getter
-
-public class Inscripcion{
+public class Inscripcion {
 
 
-
+    public Boolean aprobada(Alumno alumno, List<Materia> materias) {
+        return materias.stream().allMatch(materia -> alumno.puedeInscribirse(materia));
+    }
 }
